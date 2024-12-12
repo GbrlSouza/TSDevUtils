@@ -102,6 +102,21 @@ Analisa padrões inseguros no código.
 
 ---
 
+### 11. **Explicação dos Módulos (Resumo)**
+
+- **TypeValidator**: Fornece métodos estáticos para validação de tipos em tempo de execução.
+- **TypeGenerator**: Gera tipos TypeScript com base em dados JSON dinâmicos.
+- **AsyncFlow**: Controla o fluxo assíncrono de promessas, com validação de tipos.
+- **TypeMapper**: Mapeia tipos de TypeScript para outras linguagens (ex: Java para Python).
+- **DocGenerator**: Gera documentação básica a partir de funções e comentários no código.
+- **Refactorer**: Um módulo básico para refatoração de código, com um exemplo simples.
+- **TestAutomation**: Gera casos de teste automaticamente com base no código.
+- **TypeTranslation**: Converte código Java para TypeScript (com mapeamento básico de tipos).
+- **StateManager**: Cria um gerenciador de estado simples para rastrear e atualizar estados.
+- **SecurityAnalyzer**: Realiza uma análise simples do código para encontrar padrões inseguros, como o uso de `eval()`.
+
+---
+
 ## Instalação
 
 Você pode adicionar a biblioteca diretamente ao seu projeto TypeScript copiando o código para um arquivo, como `TSDevUtils.ts`. Caso deseje publicar no npm, basta empacotar o código com ferramentas como `webpack` ou `rollup`.
@@ -130,6 +145,29 @@ const stateManager = TSDevUtils.StateManager.createStateManager({ count: 0 });
 stateManager.update('count', 10);
 console.log(stateManager.get('count')); // 10
 ```
+
+## Como Utilizar a Biblioteca:
+
+1. **Instalação**:
+   - Crie um arquivo `TSDevUtils.ts` e cole o código acima.
+   - Para utilizar no seu projeto, basta importar os módulos desejados.
+
+   ```typescript
+   import { TSDevUtils } from './TSDevUtils';
+
+   // Exemplo de uso:
+   const testCases = TSDevUtils.TestAutomation.generateTestCases('function myFunction() {}');
+   console.log(testCases);
+   ```
+
+2. **Publicação**:
+   - Caso queira publicar no `npm`, você pode empacotar o código utilizando ferramentas como `webpack` ou `rollup`.
+   - Adicione um `package.json` com as informações do projeto, como nome, versão, descrição, etc.
+
+3. **Documentação**:
+   - Use os módulos da biblioteca para melhorar seu fluxo de trabalho no desenvolvimento TypeScript, gerando documentação, gerenciando estado, criando testes automáticos e muito mais.
+
+---
 
 ## Contribuindo
 
